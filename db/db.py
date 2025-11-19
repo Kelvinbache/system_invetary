@@ -13,18 +13,18 @@ try:
 
     print("connetion is exit")
 
-    # with conn.cursor() as cur:
-    #     cur.execute("""
-    #         create table products (
-    #           id bigint primary key generated always as identity,
-    #           name text,
-    #           purchase_cost numeric,
-    #           shipping_cost numeric,
-    #           sale numeric,
-    #           profits numeric
-    #         );""")
+    with conn.cursor() as cur:
+        cur.execute("""
+            create table products (
+              id bigint primary key generated always as identity,
+              name text,
+              purchase_cost numeric,
+              shipping_cost numeric,
+              sale numeric,
+              profits numeric
+            );""")
 
-    # print("table is create exit")
+    print("table is create exit")
 
 except Exception as err:
     print(f"error in db:{err}")

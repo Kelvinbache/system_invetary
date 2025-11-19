@@ -33,4 +33,4 @@ def list_products(products: Products):
         return {"reponse": "ok"}
 
     except Exception as err:
-        raise HTTPException(status_code=404, detail=f"error in: {err}")
+        raise HTTPException(status_code=400, detail=f"error in: {err}")
