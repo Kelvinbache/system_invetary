@@ -1,5 +1,4 @@
 from fastapi import APIRouter, HTTPException, Request
-from fastapi._compat.v1 import RequestErrorModel
 from fastapi.templating import Jinja2Templates
 from starlette.responses import HTMLResponse
 
