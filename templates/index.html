@@ -8,10 +8,11 @@
     </head>
 
     <body>
-        {% if request.url == "http://127.0.0.1:8080/add_product" %} {% include
-        'fromt.html' %} {% else %}
-        <h1>hello word</h1>
-        {% endif %}
+        <main>
+            {% if request.url == "http://127.0.0.1:8080/add_product" %} {%
+            include'fromt.html' %} {% else %} {% include'listItems.html' %} {%
+            endif %}
+        </main>
         <script src="static/js/index.js"></script>
     </body>
 </html>
