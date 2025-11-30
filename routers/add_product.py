@@ -49,18 +49,10 @@ async def list_products(request: Request):
                 ),
             )
 
+            conn.commit()
+
         return {"reponse": "ok"}
 
     except Exception as err:
+        conn.rollback()
         raise HTTPException(status_code=400, detail=f"error in: {err}")
-
-
-"""
-{
-    products.name,
-    products.purchase_cost,
-    products.shipping_cost,
-    products.sale,
-    products.profits,
-}
-"""

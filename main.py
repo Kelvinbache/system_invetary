@@ -1,7 +1,5 @@
 import uvicorn
 from fastapi import FastAPI
-
-# Templates
 from fastapi.staticfiles import StaticFiles
 
 # routers
@@ -9,6 +7,7 @@ from routers.add_product import router
 from routers.list_product import router_list_products
 
 app = FastAPI()
+
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 

@@ -1,0 +1,19 @@
+.table_products {
+    border-collapse: separate;
+    border-spacing: 10px;
+    text-align: center;
+}
+
+.tdTableProducts,
+th {
+    padding: 10px;
+}
+
+.trTableProducts {
+    margin-bottom: 8px;
+    border-bottom: 1px solid black;
+}
+
+.bodyTable {
+    margin: 5px;
+}

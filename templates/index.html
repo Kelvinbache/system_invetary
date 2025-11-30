@@ -10,9 +10,15 @@
     <body>
         <main>
             {% if request.url == "http://127.0.0.1:8080/add_product" %} {%
-            include'fromt.html' %} {% else %} {% include'listItems.html' %} {%
-            endif %}
+            include'fromt.html' %}
+            <script src="static/js/from.js"></script>
+
+            {% else %} {% include'listItems.html' %}
+            <script src="static/js/request_products.js"></script>
+            <script src="static/js/download.js"></script>
+            <script src="static/js/deleteElemt.js"></script>
+
+            {%endif %}
         </main>
-        <script src="static/js/index.js"></script>
     </body>
 </html>
