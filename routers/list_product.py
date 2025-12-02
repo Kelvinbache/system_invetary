@@ -24,7 +24,7 @@ def list_products():
     try:
         with conn.cursor() as cur:
             cur.execute(
-                "SELECT name,purchase_cost,shipping_cost,sale, profits FROM products"
+                "SELECT id,name,purchase_cost,shipping_cost,sale, profits FROM products"
             )
 
             response = cur.fetchall()
