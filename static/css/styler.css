@@ -1,7 +1,33 @@
-.table_products {
-    border-collapse: separate;
-    border-spacing: 10px;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: skyblue;
+}
+
+/*contianer*/
+.container {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.header {
     text-align: center;
+    width: 60%;
+    border-radius: 10px;
+}
+
+/*table*/
+.table_products {
+    border-spacing: 7px;
+    border-collapse: separate;
+    text-align: center;
+}
+
+.tdTableProducts thead {
+    border-bottom: 1px solid black;
 }
 
 .tdTableProducts,
@@ -10,10 +36,179 @@ th {
 }
 
 .trTableProducts {
-    margin-bottom: 8px;
-    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+    border: 1px solid black;
 }
 
 .bodyTable {
-    margin: 5px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+/*buttons */
+.buttons {
+    width: 61%;
+    text-align: end;
+}
+
+.buttons > button {
+    border-radius: 15px;
+    height: 30px;
+    width: 80px;
+    border-style: none;
+}
+
+.add_product {
+    background-color: steelblue;
+    padding: 0px 12px;
+}
+
+.add_product > a {
+    text-decoration: none;
+    color: black;
+}
+
+.Downloads_exel {
+    background-color: slategrey;
+    cursor: pointer;
+}
+
+.deleteButton {
+    background-color: slategrey;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 15px;
+    height: 30px;
+    width: 80px;
+}
+
+/*event in buttons*/
+
+.add_product:hover {
+    background-color: lightslategrey;
+}
+
+.Downloads_exel:hover {
+    background-color: steelblue;
+}
+
+.deleteButton:hover {
+    background-color: indianred;
+}
+
+.add_product:active {
+    background-color: slategrey;
+}
+
+.Downloads_exel:active {
+    background-color: royalblue;
+    outline: none;
+}
+
+.deleteButton:active {
+    background-color: indianred;
+}
+
+/*from*/
+.container_from {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/*inputs*/
+
+.name {
+    width: 120%;
+    height: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.purchase_cost {
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+}
+
+.purchase_cost > .purchase_cost {
+    width: 200px;
+    height: 15px;
+    border-radius: 5px;
+}
+
+.shipping_cost {
+    display: flex;
+    justify-content: end;
+    gap: 6px;
+}
+
+.shipping_cost > .shipping_cost {
+    width: 200px;
+    height: 15px;
+    border-radius: 5px;
+}
+
+.sale {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.sale > .sale {
+    width: 200px;
+    height: 15px;
+    border-radius: 5px;
+}
+
+/*button*/
+.buttons_from {
+    display: flex;
+    justify-content: end;
+    width: 120%;
+}
+
+.buttons_from > .cancel {
+    border-style: none;
+    cursor: pointer;
+    background: indianred;
+    height: 40px;
+    width: 150px;
+    border-radius: 15px;
+    margin-left: 25px;
+}
+
+.buttons_from > .cancel > a {
+    text-decoration: none;
+    color: black;
+}
+
+.buttons_from > .cancel:hover {
+    background: dimgray;
+}
+
+.buttons_from > .cancel:active {
+    background: dimgrey;
+    outline: none;
+}
+
+.buttons_from > .send {
+    border-style: none;
+    cursor: pointer;
+    background: steelblue;
+    height: 40px;
+    width: 150px;
+    border-radius: 15px;
+}
+
+.buttons_from > .send:hover {
+    background: dimgray;
+}
+
+.buttons_from > .send:active {
+    background: dimgrey;
+    outline: none;
 }

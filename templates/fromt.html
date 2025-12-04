@@ -1,30 +1,52 @@
 <section class="container_from">
-    <form id="from_product">
-        <label for="name">The name product:</label><br />
-        <input type="text" id="name" name="name" required />
+    <form class="from_product" id="from_product">
+        <input
+            type="text"
+            id="name"
+            name="name"
+            class="name"
+            placeholder="The name product:"
+            required
+        />
         <br /><br />
 
+        <section class="purchase_cost"
         <label for="purchase_cost">The cost of product</label><br />
         <input
             type="text"
             id="purchase_cost"
             name="purchase_cost"
+            class="purchase_cost"
             required
         /><br />
+        </section>
         <br /><br />
 
-        <label for="shipping_cost">The shipping cost of product</label><br />
-        <input type="text" id="shipping_cost" name="shipping_cost" />
+        <section class="shipping_cost">
+            <label for="shipping_cost">The shipping cost of product</label
+            ><br />
+
+            <input
+                type="text"
+                id="shipping_cost"
+                name="shipping_cost"
+                class="shipping_cost"
+            />
+        </section>
         <br /><br />
 
+        <section class="sale"
         <label for="sale">The sale for product</label><br />
-        <input type="text" id="sale" name="sale" required /><br />
+        <input type="text" id="sale" name="sale" class="sale" required /><br />
+        </section>
         <br /><br />
+
+        <section class="buttons_from">
 
         <button type="submit" class="send" id="send">Enviar Datos</button>
-        <button type="reset" class="reset_data">Limpiar</button>
+        <button class="cancel" id="cancel">
+            <a href="http://127.0.0.1:8080/home">Cancel</a>
+        </button>
+        </section>
     </form>
-    <button class="cancel" id="cancel">
-        <a href="http://127.0.0.1:8080/home">Cancel</a>
-    </button>
 </section>

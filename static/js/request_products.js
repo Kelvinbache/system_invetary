@@ -63,29 +63,20 @@ function addButtom() {
           .then((data) => {
             if (data) {
               Object.values(data).forEach((value) => {
-                p.textContent = value;
+                alert(value);
               });
 
               filaPadre.remove();
               location.reload(true);
             } else {
-              p.textContent = "It is not possible to remove the product";
+              alert("It is not possible to remove the product");
               event.target.disabled = false;
             }
 
-            container.appendChild(p);
+            container.firstChild(p);
           });
       }
     });
     next.appendChild(button);
-  }
-}
-
-function letterDetector(letter) {
-  if (letter.search(/[a-z]/i) !== -1) {
-    const result = letter.replace(/[a-z]/i, "");
-    return result;
-  } else {
-    return letter;
   }
 }

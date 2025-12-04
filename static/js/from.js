@@ -1,6 +1,6 @@
 const form = document.getElementById("from_product");
 
-const name = document.getElementById("name");
+const nameProcduct = document.getElementById("name");
 const purchase_cost = document.getElementById("purchase_cost");
 const shipping_cost = document.getElementById("shipping_cost");
 const sale = document.getElementById("sale");
@@ -9,7 +9,7 @@ form.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const datos = {
-    name: name.value,
+    name: nameProcduct.value,
     purchase_cost: purchase_cost.value,
     shipping_cost: shipping_cost.value,
     sale: sale.value,
