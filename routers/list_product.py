@@ -39,6 +39,11 @@ def list_products():
         raise HTTPException(status_code=404, detail=f" this is error: {err}")
 
 
+@router_list_products.get("/login", response_class=HTMLResponse)
+def controllerHome(request: Request):
+    return template.TemplateResponse(request=request, name="index.html", context={})
+
+
 @router_list_products.get("/home", response_class=HTMLResponse)
 def controllerHome(request: Request):
     return template.TemplateResponse(request=request, name="index.html", context={})

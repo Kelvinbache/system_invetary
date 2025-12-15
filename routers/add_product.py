@@ -1,6 +1,7 @@
 import ast
 
 from fastapi import APIRouter, HTTPException, Request
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 
 from db.db import conn
@@ -12,6 +13,10 @@ class Products(BaseModel):
     shipping_cost: float
     sale: float
     profits: float
+
+class User(BaseModel):
+    name_user: str
+    password: str
 
 
 router = APIRouter()
@@ -29,10 +34,7 @@ async def list_products(request: Request):
             "purchase_cost": float(bodyDecode["purchase_cost"]),
             "shipping_cost": float(bodyDecode["shipping_cost"]),
             "sale": float(bodyDecode["sale"]),
-            "profits": (
-                float(bodyDecode["purchase_cost"]) + float(bodyDecode["shipping_cost"])
-            )
-            - float(bodyDecode["sale"]),
+            "profits": float(bodyDecode["sale"]) - (float(bodyDecode["purchase_cost"]) + float(bodyDecode["shipping_cost"])),
         }
 
         products = Products(**external_data)
@@ -56,3 +58,15 @@ async def list_products(request: Request):
     except Exception as err:
         conn.rollback()
         raise HTTPException(status_code=400, detail=f"error in: {err}")
+
+
+@router.post("/user")
+async def access(user:User):
+    if user.name_user == "admin" and user.password == "adminSystem123":
+          return RedirectResponse(
+            url="/home",
+            status_code=303
+        )
+
+    else:
+        raise HTTPException(status_code=401, detail="Access denied, invalid password or username")

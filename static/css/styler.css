@@ -19,6 +19,17 @@ body {
     border-radius: 10px;
 }
 
+
+/* login */
+
+.content_form_login {
+    width: 40%;
+}
+
+.from_login{
+    width: 40%;
+}
+
 /*table*/
 .table_products {
     border-spacing: 7px;
@@ -212,3 +223,5 @@ th {
     background: dimgrey;
     outline: none;
 }
+
+

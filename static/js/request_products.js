@@ -35,7 +35,6 @@ async function load() {
 
 function addButtom() {
   const nextElement = table.children;
-  const p = document.createElement("p");
 
   for (const next of nextElement) {
     const button = document.createElement("button");
@@ -47,8 +46,9 @@ function addButtom() {
       event.target.disabled = true;
 
       if (filaPadre) {
-        const index = filaPadre.textContent.trim().slice(0, 2); //not is number is remove
+        const index = filaPadre.textContent.trim().slice(0, 2); //not is number is remove        
         const indexId = letterDetector(index);
+
 
         fetch(`http://127.0.0.1:8080/api/delete_product/${indexId}`, {
           method: "Delete",
@@ -63,20 +63,32 @@ function addButtom() {
           .then((data) => {
             if (data) {
               Object.values(data).forEach((value) => {
-                alert(value);
+                console.log(value)
               });
 
-              filaPadre.remove();
               location.reload(true);
+
             } else {
-              alert("It is not possible to remove the product");
+              console.log("It is not possible to remove the product");
               event.target.disabled = false;
             }
 
-            container.firstChild(p);
           });
       }
     });
     next.appendChild(button);
   }
+}
+
+
+function letterDetector(index){
+  const testDetector = /[a-zA-Z]/g.test(index)
+  
+  if(testDetector){
+    return index.replace(/[a-zA-Z]/g, '')
+  
+  } else {
+    return index
+  }
+
 }
