@@ -27,6 +27,7 @@ send_login.addEventListener("submit", async(e)=> {
     response.json().then((data)=> {
         console.log(data)
     })
+    
     //   if (response.status == 200) {
     //     window.location.href = `http://127.0.0.1:8080/${}`;
     //   }
